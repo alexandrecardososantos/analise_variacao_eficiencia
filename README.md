@@ -9,7 +9,7 @@
 Em carteiras de contas ou clientes, é comum monitorar indicadores do tipo:
 
 ```
-perc_atvc_cont = ind_atvc_cont / qtd
+perc_indicador = ind_indicador / qtd
 ```
 
 Quando esse indicador cai de um trimestre para outro, a pergunta natural é:
@@ -82,10 +82,10 @@ Recomenda-se começar com `POOL_VARS = 5` e `ORDEM_COMBO = [2, 3]`.
 |---|---|---|
 | `trimestre` | string | Período de referência (ex: `2024Q1`) |
 | `qtd` | int | Total de contas no período |
-| `ind_atvc_cont` | int | Total de contas ativas no período |
+| `ind_indicador` | int | Total de contas ativas no período |
 | `var_1` ... `var_10` | string | Variáveis categóricas de segmentação |
 
-O indicador `perc_atvc_cont = ind_atvc_cont / qtd` é calculado internamente — não precisa existir na tabela de entrada.
+O indicador `perc_indicador = ind_indicador / qtd` é calculado internamente — não precisa existir na tabela de entrada.
 
 ---
 
@@ -115,7 +115,7 @@ pip install pandas numpy
 # Substitua o bloco de dados sintéticos pelo seu DataFrame:
 df = pd.read_csv("sua_base.csv")
 
-# Garanta as colunas: trimestre, qtd, ind_atvc_cont + variáveis categóricas
+# Garanta as colunas: trimestre, qtd, ind_indicador + variáveis categóricas
 # Atualize VARIÁVEIS_CAT com os nomes reais das suas colunas
 # Execute o script
 python shift_share_analysis.py
@@ -127,7 +127,7 @@ python shift_share_analysis.py
 
 O script imprime na saída padrão:
 
-1. **Visão geral** — `perc_atvc_cont` e `delta_perc` por trimestre
+1. **Visão geral** — `perc_indicador` e `delta_perc` por trimestre
 2. **Shift-share individual** — efeito taxa, mix e total por categoria de cada variável
 3. **Ranking de variáveis** — ordenado por poder explicativo acumulado
 4. **Ranking de combinações** — por cada ordem configurada em `ORDEM_COMBO`
