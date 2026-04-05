@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+venv/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+Thumbs.db
+.DS_Store
+
+analise_clientes_*.ipynb
+tabela_sumarizada_clientes_*.csv
